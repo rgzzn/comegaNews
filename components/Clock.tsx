@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { formatClockTime, formatDateShort } from '../utils/date';
 
 const Clock: React.FC = () => {
@@ -8,14 +8,17 @@ const Clock: React.FC = () => {
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="clock-panel">
-      <div className="clock-time">{formatClockTime(time)}</div>
-      <div className="clock-date">{formatDateShort(time)}</div>
+    <div className="flex flex-col items-end text-right z-50">
+      <div className="text-5xl font-bold tracking-tight leading-none text-slate-900">
+        {formatClockTime(time)}
+      </div>
+      <div className="text-xl font-medium text-orange-500 uppercase tracking-widest mt-1">
+        {formatDateShort(time)}
+      </div>
     </div>
   );
 };
