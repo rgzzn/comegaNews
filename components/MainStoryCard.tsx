@@ -16,7 +16,7 @@ const MainStoryCard: React.FC<MainStoryCardProps> = ({ item, className = "", isT
     <div className={`relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-white flex ${className}`}>
       
       {/* Left: Image Section (40%) */}
-      <div className="relative w-[70%] h-full overflow-hidden shrink-0 bg-slate-200">
+      <div className="relative w-[60%] h-full overflow-hidden shrink-0 bg-slate-200">
          <div className="absolute inset-0 bg-slate-200 z-0" />
 
          <img 
@@ -36,22 +36,22 @@ const MainStoryCard: React.FC<MainStoryCardProps> = ({ item, className = "", isT
       {/* Right: Content Section (60%) */}
       {/* Added justify-center to center content vertically */}
       <div 
-        className={`w-[30%] h-full p-12 flex flex-col justify-center relative transition-all duration-500 ease-out transform
+        className={`w-[40%] h-full p-10 flex flex-col justify-center relative transition-all duration-500 ease-out transform
           ${isTransitioning ? 'opacity-0 translate-x-4' : 'opacity-100 translate-x-0'}`}
       >
         
         {/* Top Decoration */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-full -mr-16 -mt-16 z-0" />
+        <div className="absolute top-0 right-0 w-40 h-40 bg-orange-50 rounded-bl-full -mr-16 -mt-16 z-0" />
 
         <div className="relative z-10 flex flex-col justify-center h-full">
           
           {/* Header: Source | Time - Increased Text Size */}
           <div className="flex items-center gap-3 mb-5 shrink-0">
-            <span className="bg-orange-600 text-white px-5 py-1.5 rounded text-base font-bold uppercase tracking-wider">
+            <span className="bg-orange-600 text-white px-7 py-1.5 rounded text-base font-bold uppercase tracking-wider">
               {item.sourceName}
             </span>
-            <span className="text-slate-400 text-xl">|</span>
-            <span className="text-orange-600 font-semibold text-xl">
+            <span className="text-slate-400 text-3xl">|</span>
+            <span className="text-orange-600 font-semibold text-3xl">
               {getRelativeTime(item.pubDate)}
             </span>
           </div>

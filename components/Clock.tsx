@@ -13,10 +13,10 @@ const Clock: React.FC = () => {
 
   return (
     <div className="flex flex-col items-end text-right z-50">
-      <div className="text-8xl font-bold tracking-tight leading-none text-slate-900">
+      <div className="text-9xl font-bold tracking-tight leading-none text-slate-900">
         {formatClockTime(time)}
       </div>
-      <div className="text-4xl font-medium text-orange-500 uppercase tracking-widest mt-1">
+      <div className="text-5xl font-medium text-orange-500 uppercase tracking-widest mt-1">
         {formatDateShort(time)}
       </div>
     </div>
