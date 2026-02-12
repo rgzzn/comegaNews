@@ -3,6 +3,7 @@ import { NewsItem } from '../types';
 import { getRelativeTime } from '../utils/date';
 import { DEFAULT_IMAGE } from '../constants';
 import { Clock } from 'lucide-react';
+import QRCode from "react-qr-code";
 
 interface StoryCardProps {
   item: NewsItem;
@@ -12,10 +13,10 @@ interface StoryCardProps {
 
 const StoryCard: React.FC<StoryCardProps> = ({ item, className = "", delayClass = "" }) => {
   return (
-    <div className={`flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 ${className} ${delayClass} animate-slide-up-fade group`}>
+    <div className={`flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 ${className} ${delayClass} animate-slide-up-fade group relative`}>
       
-      {/* Image Section - Reduced for more text space (Top 45%) */}
-      <div className="relative h-[45%] w-full overflow-hidden bg-slate-200">
+      {/* Image Section - Reduced (Top 35%) */}
+      <div className="relative h-[35%] w-full overflow-hidden bg-slate-200">
         <div className="absolute inset-0 bg-slate-800/10 z-10 group-hover:bg-transparent transition-colors duration-500" />
         <img 
           src={item.imageUrl || DEFAULT_IMAGE} 
@@ -24,30 +25,44 @@ const StoryCard: React.FC<StoryCardProps> = ({ item, className = "", delayClass 
         />
         
         {/* Floating Source Badge */}
-        <div className="absolute top-5 left-5 z-20">
-             <span className="px-5 py-2 bg-white/95 text-orange-600 text-xl font-black uppercase tracking-widest rounded-xl shadow-lg backdrop-blur-xl border border-white/20">
+        <div className="absolute top-3 left-3 z-20">
+             <span className="px-3 py-1 bg-white/95 text-orange-600 text-sm font-black uppercase tracking-widest rounded-lg shadow-md backdrop-blur-xl border border-white/20">
               {item.sourceName}
             </span>
         </div>
       </div>
       
-      {/* Content Section (Bottom 55%) */}
-      <div className="h-[55%] p-8 flex flex-col relative justify-between">
+      {/* Content Section (Bottom 65%) */}
+      <div className="h-[65%] p-4 flex flex-col relative justify-between">
         <div>
           {/* Time */}
-          <div className="flex items-center text-orange-500 text-lg font-black mb-4 uppercase tracking-wider">
-            <Clock className="w-6 h-6 mr-3" />
+          <div className="flex items-center text-orange-500 text-sm font-black mb-1 uppercase tracking-wider">
+            <Clock className="w-4 h-4 mr-2" />
             {getRelativeTime(item.pubDate)}
           </div>
 
           {/* Title */}
-          <h3 className="text-3xl font-black text-slate-900 leading-[1.15] line-clamp-2 group-hover:text-orange-600 transition-colors duration-300">
+          <h3 className="text-xl font-black text-slate-900 leading-tight line-clamp-3 group-hover:text-orange-600 transition-colors duration-300">
             {item.title}
           </h3>
         </div>
         
-        {/* Decorative Line */}
-        <div className="w-20 h-2 bg-slate-100 mt-5 rounded-full group-hover:bg-orange-400 group-hover:w-full transition-all duration-700 ease-out" />
+        <div className="flex justify-between items-end mt-2">
+            {/* Decorative Line */}
+            <div className="w-12 h-1 bg-slate-100 rounded-full group-hover:bg-orange-400 group-hover:w-20 transition-all duration-700 ease-out" />
+            
+            {/* QR Code (Mini) */}
+            <div className="opacity-60 group-hover:opacity-100 transition-opacity duration-300 bg-white p-1 rounded border border-slate-100 shadow-sm">
+                <div className="h-12 w-12">
+                    <QRCode
+                    size={256}
+                    style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                    value={item.link || ""}
+                    viewBox={`0 0 256 256`}
+                    />
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   );

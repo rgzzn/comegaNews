@@ -68,15 +68,15 @@ const NewsBoard: React.FC<NewsBoardProps> = ({ news }) => {
   }
 
   return (
-    <div className="w-full h-full p-12 box-border grid grid-cols-12 gap-12 relative bg-slate-100 overflow-hidden">
+    <div className="w-full h-full p-6 box-border grid grid-cols-12 gap-6 relative bg-slate-100 overflow-hidden">
       
       {/* --- HEADER (Absolute) --- */}
-      <div className="absolute top-12 right-16 z-[60]">
+      <div className="absolute top-6 right-8 z-[60]">
         <Clock />
       </div>
 
       {/* --- COLUMN 1: MAIN IMAGE (Approx 33% width -> col-span-4/12) --- */}
-      <div className="col-span-4 h-full relative rounded-[2rem] overflow-hidden shadow-2xl bg-slate-900 group">
+      <div className="col-span-4 h-full relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 group">
         <div className="absolute inset-0 bg-slate-900 z-0" />
         
         {/* Animated Image */}
@@ -107,25 +107,25 @@ const NewsBoard: React.FC<NewsBoardProps> = ({ news }) => {
       </div>
 
       {/* --- COLUMN 3: SIDEBAR (25% width -> col-span-3/12 approx) --- */}
-      <div className="col-span-3 h-full flex flex-col pt-24 pl-4">
+      <div className="col-span-3 h-full flex flex-col pt-4 pl-2">
         
         {/* Sidebar Header */}
-        <div className="flex items-center gap-6 border-b-2 border-slate-200 pb-6 mb-8 animate-slide-up-fade">
-           <div className="p-4 bg-white shadow-sm rounded-2xl text-orange-600">
-             <Newspaper className="w-10 h-10" />
+        <div className="flex items-center gap-3 border-b border-slate-200 pb-3 mb-4 animate-slide-up-fade">
+           <div className="p-2 bg-white shadow-sm rounded-lg text-orange-600">
+             <Newspaper className="w-6 h-6" />
            </div>
            <div>
-             <span className="text-slate-900 text-3xl font-black uppercase tracking-widest block leading-none">
+             <span className="text-slate-900 text-2xl font-black uppercase tracking-widest block leading-none">
               Notizie
             </span>
-            <span className="text-lg text-slate-500 font-bold uppercase tracking-wide">
+            <span className="text-base text-slate-500 font-bold uppercase tracking-wide">
               In tempo reale
             </span>
            </div>
         </div>
         
         {/* Sidebar Cards Stack */}
-        <div className="flex-1 flex flex-col gap-6">
+        <div className="flex-1 flex flex-col gap-4">
           {secondaryItems.map((item, idx) => (
             <div key={`${item.id}-${secondaryOffset}-${idx}`} className="flex-1 min-h-0">
                <StoryCard 
