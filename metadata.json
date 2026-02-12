@@ -1,0 +1,5 @@
+{
+  "name": "BentoNews Signage",
+  "description": "A full-screen, 16:9 digital signage news reader with a Bento-style grid layout, designed for TV displays and kiosk mode.",
+  "requestFramePermissions": []
+}
