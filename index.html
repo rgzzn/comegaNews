@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>BentoNews Signage</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontSize: {
+            xs: '0.3125vw', // 12px at 3840
+            sm: '0.3645vw', // 14px at 3840
+            base: '0.4166vw', // 16px at 3840
+            lg: '0.46875vw', // 18px at 3840
+            xl: '0.5208vw', // 20px at 3840
+            '2xl': '0.625vw', // 24px at 3840
+            '3xl': '0.78125vw', // 30px at 3840
+            '4xl': '0.9375vw', // 36px at 3840
+            '5xl': '1.25vw', // 48px at 3840
+            '6xl': '1.5625vw', // 60px at 3840
+            '7xl': '1.875vw', // 72px at 3840
+            '8xl': '2.5vw', // 96px at 3840
+            '9xl': '3.333vw', // 128px at 3840
+          }
+        }
+      }
+    </script>
     <style>
       /* Global resets for Kiosk/Signage mode */
       body, html {
@@ -71,6 +92,7 @@
       .line-clamp-12 {
         display: -webkit-box;
         -webkit-line-clamp: 12;
+        line-clamp: 12;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
