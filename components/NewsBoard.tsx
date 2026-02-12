@@ -87,10 +87,10 @@ const NewsBoard: React.FC<NewsBoardProps> = ({ news }) => {
       <div className="col-span-4 h-full flex flex-col pt-24">
         <div className="flex items-center gap-4 border-b-4 border-slate-200 pb-4 mb-8 animate-fade-in">
            <div className="p-3 bg-orange-500 rounded text-white">
-             <Newspaper className="w-8 h-8" />
+             <Newspaper className="w-10 h-10" />
            </div>
            <div>
-             <span className="text-slate-900 text-3xl font-black uppercase tracking-widest block leading-none">
+             <span className="text-slate-900 text-4xl font-black uppercase tracking-widest block leading-none">
               Ultime Notizie
             </span>
             <span className="text-base text-slate-500 font-medium">

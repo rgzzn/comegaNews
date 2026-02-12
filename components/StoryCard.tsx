@@ -15,7 +15,7 @@ const StoryCard: React.FC<StoryCardProps> = ({ item, className = "", delayClass 
     <div className={`flex flex-row h-full bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 ${className} ${delayClass} animate-glide-up group`}>
       
       {/* Image Section (Approx 35-40%) */}
-      <div className="w-[35%] h-full relative shrink-0 overflow-hidden bg-slate-200">
+      <div className="w-[50%] h-full relative shrink-0 overflow-hidden bg-slate-200">
         <img 
           src={item.imageUrl || DEFAULT_IMAGE} 
           alt={item.title}
@@ -23,22 +23,22 @@ const StoryCard: React.FC<StoryCardProps> = ({ item, className = "", delayClass 
         />
         {/* Source Badge overlaid */}
         <div className="absolute top-2 left-2">
-             <span className="px-2 py-1 bg-black/60 text-white text-xs font-bold uppercase tracking-wider rounded backdrop-blur-sm">
+             <span className="px-4 py-1 bg-black/60 text-white text-s font-bold uppercase tracking-wider rounded backdrop-blur-sm">
               {item.sourceName}
             </span>
         </div>
       </div>
       
       {/* Text Section - Added justify-center for vertical centering */}
-      <div className="w-[65%] p-6 flex flex-col justify-center relative">
+      <div className="w-[65%] p-10 flex flex-col justify-center relative">
         <div className="flex flex-col gap-2">
           {/* Title - Increased Size */}
-          <h3 className="text-xl lg:text-2xl font-bold text-slate-900 leading-tight line-clamp-2">
+          <h3 className="text-xl lg:text-2xl font-bold text-slate-900 leading-tight line-clamp-10">
             {item.title}
           </h3>
 
           {/* Subtitle / Description - Increased Size */}
-          <p className="text-slate-500 text-base lg:text-lg leading-snug line-clamp-2">
+          <p className="text-slate-500 text-base lg:text-lg leading-snug line-clamp-10">
             {item.description}
           </p>
           

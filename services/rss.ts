@@ -59,7 +59,7 @@ const fetchFeed = async (feed: FeedConfig): Promise<NewsItem[]> => {
         sourceName: feed.name,
         imageUrl,
         description: cleanDescription.slice(0, 150) + (cleanDescription.length > 150 ? "..." : ""), // Short description for previews
-        content: fullContent.slice(0, 2000) // Longer content for main story card
+        content: fullContent.slice(0, 4000) // Longer content for main story card
       };
     });
 

@@ -16,7 +16,7 @@ const MainStoryCard: React.FC<MainStoryCardProps> = ({ item, className = "", isT
     <div className={`relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-white flex ${className}`}>
       
       {/* Left: Image Section (40%) */}
-      <div className="relative w-[40%] h-full overflow-hidden shrink-0 bg-slate-200">
+      <div className="relative w-[70%] h-full overflow-hidden shrink-0 bg-slate-200">
          <div className="absolute inset-0 bg-slate-200 z-0" />
 
          <img 
@@ -36,7 +36,7 @@ const MainStoryCard: React.FC<MainStoryCardProps> = ({ item, className = "", isT
       {/* Right: Content Section (60%) */}
       {/* Added justify-center to center content vertically */}
       <div 
-        className={`w-[60%] h-full p-12 flex flex-col justify-center relative transition-all duration-500 ease-out transform
+        className={`w-[30%] h-full p-12 flex flex-col justify-center relative transition-all duration-500 ease-out transform
           ${isTransitioning ? 'opacity-0 translate-x-4' : 'opacity-100 translate-x-0'}`}
       >
         
@@ -47,7 +47,7 @@ const MainStoryCard: React.FC<MainStoryCardProps> = ({ item, className = "", isT
           
           {/* Header: Source | Time - Increased Text Size */}
           <div className="flex items-center gap-3 mb-5 shrink-0">
-            <span className="bg-orange-600 text-white px-4 py-1.5 rounded text-base font-bold uppercase tracking-wider">
+            <span className="bg-orange-600 text-white px-5 py-1.5 rounded text-base font-bold uppercase tracking-wider">
               {item.sourceName}
             </span>
             <span className="text-slate-400 text-xl">|</span>
@@ -58,21 +58,21 @@ const MainStoryCard: React.FC<MainStoryCardProps> = ({ item, className = "", isT
           
           {/* Title Area - Increased Text Size significantly */}
           <div className="mb-5 shrink-0">
-            <h1 className="text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight line-clamp-3">
+            <h1 className="text-8xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight line-clamp-10">
               {item.title}
             </h1>
           </div>
 
           {/* Subtitle / Description Area - Increased Text Size */}
           <div className="mb-7 shrink-0 border-l-[6px] border-orange-200 pl-6">
-            <h2 className="text-3xl text-slate-700 font-semibold leading-snug line-clamp-3">
+            <h2 className="text-4xl text-slate-700 font-semibold leading-snug line-clamp-5">
               {item.description}
             </h2>
           </div>
           
           {/* Main Content Body - Increased Text Size */}
-          <div className="relative overflow-hidden mask-gradient-bottom max-h-[40%]">
-            <p className="text-2xl lg:text-3xl text-slate-600 leading-relaxed font-normal text-justify pr-2">
+          <div className="relative overflow-hidden">
+            <p className="text-3xl lg:text-4xl text-slate-600 leading-relaxed font-normal text-justify pr-2">
               {item.content}
             </p>
           </div>
